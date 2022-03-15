@@ -26,6 +26,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         initComponents();
         panel_cotizacion PanelCotizaciones = new panel_cotizacion();
         ShowPanel(PanelCotizaciones);
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -185,7 +186,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
                 .addGap(268, 268, 268))
         );
 
-        PrincipalPanel.add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 250, 660));
+        PrincipalPanel.add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 0, 250, 660));
 
         PanelDinamyc.setBackground(new java.awt.Color(0, 0, 51));
 
@@ -193,14 +194,14 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         PanelDinamyc.setLayout(PanelDinamycLayout);
         PanelDinamycLayout.setHorizontalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
+            .addGap(0, 1280, Short.MAX_VALUE)
         );
         PanelDinamycLayout.setVerticalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 660, Short.MAX_VALUE)
         );
 
-        PrincipalPanel.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 660));
+        PrincipalPanel.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 660));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
