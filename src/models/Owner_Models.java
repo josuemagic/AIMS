@@ -22,4 +22,19 @@ public class Owner_Models {
         }
         return null;
     }
+
+    public ResultSet getDataLitlelMaterials() {
+        Connection conectar = Conexion.getConexion(); // Conexion DB
+        try {
+            PreparedStatement ps = conectar.prepareStatement("SELECT * FROM tornilleria");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs;
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        return null;
+    }
 }

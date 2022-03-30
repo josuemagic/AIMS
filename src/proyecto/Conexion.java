@@ -20,7 +20,7 @@ public class Conexion {
     public static Connection getConexion() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/aims", "root", "");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/aimsv1", "root", "");
             // JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
             return conectar;
         } catch (ClassNotFoundException | SQLException e) {

@@ -186,28 +186,29 @@ public class Menu_Owner_View extends javax.swing.JFrame {
                 .addGap(268, 268, 268))
         );
 
-        PrincipalPanel.add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 0, 250, 660));
+        PrincipalPanel.add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 0, 250, 660));
 
         PanelDinamyc.setBackground(new java.awt.Color(0, 0, 51));
+        PanelDinamyc.setPreferredSize(new java.awt.Dimension(1352, 1011));
 
         javax.swing.GroupLayout PanelDinamycLayout = new javax.swing.GroupLayout(PanelDinamyc);
         PanelDinamyc.setLayout(PanelDinamycLayout);
         PanelDinamycLayout.setHorizontalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGap(0, 1250, Short.MAX_VALUE)
         );
         PanelDinamycLayout.setVerticalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 660, Short.MAX_VALUE)
         );
 
-        PrincipalPanel.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 660));
+        PrincipalPanel.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 660));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1634, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,7 +239,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MousePressed
 
     private void ShowPanel(JPanel p) {
-        p.setSize(850, 660);
+        p.setSize(1352, 1011);
         p.setLocation(0, 0);
 
         PanelDinamyc.removeAll();
