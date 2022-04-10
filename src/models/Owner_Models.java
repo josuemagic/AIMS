@@ -37,4 +37,14 @@ public class Owner_Models {
 
         return null;
     }
+
+    public ResultSet updateData(int idBigMaterials, float widthBigMaterials) throws SQLException {
+        String SQL = "UPDATE especifications "
+                + "SET width = " + "\"" + widthBigMaterials + "\""
+                + " WHERE idespecifications = " + "\'" + idBigMaterials + "\'";
+        Connection conectar = Conexion.getConexion(); // Conexion DB
+        PreparedStatement ps = conectar.prepareStatement(SQL);
+        ps.executeUpdate();
+        return null;
+    }
 }

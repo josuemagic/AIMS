@@ -195,14 +195,14 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         PanelDinamyc.setLayout(PanelDinamycLayout);
         PanelDinamycLayout.setHorizontalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1250, Short.MAX_VALUE)
+            .addGap(0, 1260, Short.MAX_VALUE)
         );
         PanelDinamycLayout.setVerticalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
 
-        PrincipalPanel.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 660));
+        PrincipalPanel.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
