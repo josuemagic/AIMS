@@ -47,4 +47,14 @@ public class Owner_Models {
         ps.executeUpdate();
         return null;
     }
+
+    public ResultSet updateDataLittleMaterials(int idLittlelMaterials, int amount) throws SQLException {
+        String SQL = "UPDATE tornilleria "
+                + "SET amount = " + "\"" + amount + "\""
+                + " WHERE idtornilleria = " + "\'" + idLittlelMaterials + "\'";
+        Connection conectar = Conexion.getConexion(); // Conexion DB
+        PreparedStatement ps = conectar.prepareStatement(SQL);
+        ps.executeUpdate();
+        return null;
+    }
 }
