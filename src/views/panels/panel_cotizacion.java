@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import models.Owner_Models;
 
 public class panel_cotizacion extends javax.swing.JPanel {
@@ -28,6 +29,7 @@ public class panel_cotizacion extends javax.swing.JPanel {
         try {
             AddMaterialsList();
             AddLittleMaterialsList();
+            tablaStructure();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "No se pudo conectar al servidor, revise su conexion");
         }
@@ -77,10 +79,10 @@ public class panel_cotizacion extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TextAreaCotizacion = new javax.swing.JTextArea();
         totalPriceTextField = new javax.swing.JTextField();
         amountLittlelMaterials = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TableTicket = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(0, 0, 51));
 
@@ -144,27 +146,30 @@ public class panel_cotizacion extends javax.swing.JPanel {
             }
         });
 
-        TextAreaCotizacion.setEditable(false);
-        TextAreaCotizacion.setColumns(20);
-        TextAreaCotizacion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        TextAreaCotizacion.setRows(5);
-        jScrollPane3.setViewportView(TextAreaCotizacion);
-
         totalPriceTextField.setFont(new java.awt.Font("Dialog", 2, 36)); // NOI18N
         totalPriceTextField.setForeground(new java.awt.Color(204, 0, 51));
         totalPriceTextField.setText("Precio");
 
         amountLittlelMaterials.setText("0");
 
+        TableTicket.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(TableTicket);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(531, 531, 531)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
@@ -184,11 +189,10 @@ public class panel_cotizacion extends javax.swing.JPanel {
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(amountLittlelMaterials, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -198,43 +202,45 @@ public class panel_cotizacion extends javax.swing.JPanel {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)))
+                        .addGap(91, 91, 91))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(531, 531, 531)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(91, 91, 91))
+                    .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(220, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(amountLittlelMaterials)
-                            .addComponent(medida, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(amountLittlelMaterials)
+                    .addComponent(medida, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(210, 210, 210)
+                .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(202, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -292,17 +298,19 @@ public class panel_cotizacion extends javax.swing.JPanel {
     }
 
     public void addElementsArea(String listMaterials, float medida) {
+        DefaultTableModel model = (DefaultTableModel) TableTicket.getModel();
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         String fetch = dtf.format(LocalDateTime.now());
 
-        String head = "Nombre de la Empresa "
-                + "\nFecha: " + fetch + "\n================================================ \n\n";
         cotizaciones_controllers structureBigTicket = new cotizaciones_controllers();
         String[] element = structureBigTicket.buildBigStructureTicket(listMaterials, medida);
-        ticket += element[0];
-        TextAreaCotizacion.setText(ticket);
 
-        price += Float.parseFloat(element[1]);
+        Object objeto[] = {element[0], element[1], element[2], element[3], 1};
+        model.addRow(objeto);
+        TableTicket.setModel(model);
+
+        price += Float.parseFloat(element[3]);
         totalPriceTextField.setText(valueOf(price));
         try {
             AddMaterialsList();
@@ -312,11 +320,15 @@ public class panel_cotizacion extends javax.swing.JPanel {
     }
 
     public void addElementsTornilleriaArea(String listLittlelMaterial, String amount) {
+        DefaultTableModel model = (DefaultTableModel) TableTicket.getModel();
+
         cotizaciones_controllers buildTicket = new cotizaciones_controllers();
         String[] element = buildTicket.buildLittleStructureTicket(listLittlelMaterial, amount);
-        ticket += element[0];
-        TextAreaCotizacion.setText(ticket);
 
+        Object objeto[] = {element[0], element[1], element[2], element[3], element[4]};
+        model.addRow(objeto);
+        TableTicket.setModel(model);
+        //TextAreaCotizacion.setText(ticket);
         price += Float.parseFloat(element[1]);
         totalPriceTextField.setText(valueOf(price));
 
@@ -327,10 +339,22 @@ public class panel_cotizacion extends javax.swing.JPanel {
         }
     }
 
+    public void tablaStructure() {
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Id");
+        model.addColumn("Name");
+        model.addColumn("Medida");
+        model.addColumn("Precio");
+        model.addColumn("Cantidad");
+
+        TableTicket.setModel(model);
+
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> ListLittleMaterials;
     private javax.swing.JList<String> ListMaterials;
-    private javax.swing.JTextArea TextAreaCotizacion;
+    private javax.swing.JTable TableTicket;
     private javax.swing.JTextField amountLittlelMaterials;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -340,7 +364,7 @@ public class panel_cotizacion extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField medida;
     private javax.swing.JTextField totalPriceTextField;
     // End of variables declaration//GEN-END:variables

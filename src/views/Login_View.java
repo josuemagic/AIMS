@@ -135,14 +135,14 @@ public class Login_View extends javax.swing.JFrame {
         LabelCloseSystem.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         LabelCloseSystem.setForeground(new java.awt.Color(255, 0, 51));
         LabelCloseSystem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelCloseSystem.setText("X");
+        LabelCloseSystem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/exit.png"))); // NOI18N
         LabelCloseSystem.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelCloseSystem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 LabelCloseSystemMousePressed(evt);
             }
         });
-        PanelForm.add(LabelCloseSystem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 40, 40));
+        PanelForm.add(LabelCloseSystem, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 70, 70));
 
         PrincipalPanel.add(PanelForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 510, 490));
 
