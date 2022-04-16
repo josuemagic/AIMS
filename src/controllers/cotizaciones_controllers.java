@@ -31,18 +31,15 @@ public class cotizaciones_controllers {
     }
 
     public void updateLittleMaterials(String listLittleMaterials, String amount) throws SQLException {
-        String[] arraySplit = listLittleMaterials.split("\\s+");
+        String[] arraySplit = listLittleMaterials.split("/"); // Obtenemos los valores principales
+        String[] arrayAmountSplit = arraySplit[3].split("\\s+"); // Obtenemos la cantida
 
-        int updateDataAmount = (Integer.parseInt(arraySplit[4])) - Integer.parseInt(amount);
-        int idLittleMaterials = Integer.parseInt(arraySplit[0]);
+        int updateDataAmount = (Integer.parseInt(arrayAmountSplit[2])) - Integer.parseInt(amount);
+        String idWidthoutSpace = arraySplit[0].replaceAll("\\s+", "");
+        int idLittleMaterials = Integer.parseInt(idWidthoutSpace);
 
-        if (Integer.parseInt(arraySplit[4]) < Integer.parseInt(amount)) {
-            JOptionPane.showMessageDialog(null, "La cantidad que necesita es mayor a las disponible"
-                    + "Por favor eliga otra opcion o ponga una cantidad menor");
-        } else {
-            Owner_Models owner_models = new Owner_Models();
-            owner_models.updateDataLittleMaterials(idLittleMaterials, updateDataAmount);
-        }
+        Owner_Models owner_models = new Owner_Models();
+        owner_models.updateDataLittleMaterials(idLittleMaterials, updateDataAmount);
     }
 
     public String[] buildBigStructureTicket(String bigMaterials, float medida) {
@@ -67,10 +64,10 @@ public class cotizaciones_controllers {
         float price = 0;
         String[] arrayReturn = new String[5];
 
-        String[] arraySplit = littleMaterial.split("\\s+");
+        String[] arraySplit = littleMaterial.split("/"); // Sacamos todos los valores principales
+        String[] arrayPriceSplit = arraySplit[4].split("\\s+"); // Sacamos precio
 
-        price = (Float.valueOf(arraySplit[6]) * Float.valueOf(amount));
-
+        price = (Float.valueOf(arrayPriceSplit[2]) * Float.valueOf(amount));
         arrayReturn[0] = arraySplit[0];
         arrayReturn[1] = arraySplit[1];
         arrayReturn[2] = arraySplit[2];
@@ -81,4 +78,13 @@ public class cotizaciones_controllers {
 
     }
 
+    public boolean deletElement(int desicion, String id, String extent) {
+        Owner_Models addReturnMaterial = new Owner_Models();
+        id = id.replaceAll("\\s", "");
+        if (desicion == 1) {
+            return addReturnMaterial.re_add_BigElement(id, extent);
+        } else {
+            return addReturnMaterial.re_add_LillteElemet(id, extent);
+        }
+    }
 }

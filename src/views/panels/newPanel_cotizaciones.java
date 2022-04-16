@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package views.panels;
 
 import controllers.cotizaciones_controllers;
@@ -62,7 +58,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         Owner_Models data = new Owner_Models();
         ResultSet dataTable = data.getDataLitlelMaterials();
         while (dataTable.next()) {
-            modelo.addElement(dataTable.getString("idtornilleria") + " " + dataTable.getString("name") + " " + dataTable.getString("inch") + "in " + "Cantidad: " + dataTable.getString("amount") + " Precio: " + dataTable.getString("price") + " $");
+            modelo.addElement(dataTable.getString("idtornilleria") + " / " + dataTable.getString("name") + " / " + dataTable.getString("inch") + "in / " + "Cantidad: " + dataTable.getString("amount") + " / Precio: " + dataTable.getString("price") + " $");
         }
         // Agregamos los elementos al list
         ListLittleMaterials.setModel(modelo);
@@ -99,10 +95,9 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         Object objeto[] = {element[0], element[1], element[2], element[3], element[4]};
         model.addRow(objeto);
         jTable1.setModel(model);
-        //TextAreaCotizacion.setText(ticket);
+
         price += Float.parseFloat(element[3]);
         totalPriceTextField.setText(valueOf(price));
-
         try {
             AddLittleMaterialsList();
         } catch (SQLException ex) {
@@ -117,9 +112,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         model.addColumn("Medida");
         model.addColumn("Precio");
         model.addColumn("Cantidad");
-
         jTable1.setModel(model);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -322,21 +315,29 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteMaterialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMaterialButtonActionPerformed
+        cotizaciones_controllers addReturnMaterial = new cotizaciones_controllers();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        Owner_Models addReturnMaterial = new Owner_Models();
 
-        String[] dataForDelet = new String[4];
+        String[] dataForDelet = new String[5];
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i <=4; i++) {
             dataForDelet[i] = (String) model.getValueAt(jTable1.getSelectedRow(), i);
         }
 
-        if (!addReturnMaterial.re_add_BigElement(dataForDelet[0], dataForDelet[2])) {
-            JOptionPane.showMessageDialog(null, "No se pudo eliminar el producto, \n Por favor reinicie el software");
+        String[] arraySplit = dataForDelet[2].split("i"); // Saber si es bigMaterial o littleMaterial
+
+        if (arraySplit.length > 1) {
+            try {
+                addReturnMaterial.deletElement(4, dataForDelet[0], dataForDelet[4]);
+                AddLittleMaterialsList();
+                model.removeRow(jTable1.getSelectedRow());
+            } catch (SQLException ex) {
+                Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             try {
+                addReturnMaterial.deletElement(1, dataForDelet[0], dataForDelet[2]);
                 AddMaterialsList();
-                AddLittleMaterialsList();
                 model.removeRow(jTable1.getSelectedRow());
             } catch (SQLException ex) {
                 Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
@@ -349,22 +350,36 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        cotizaciones_controllers updateLittlelMaterial = new cotizaciones_controllers();
+
         String ValueListLittleMaterials = ListLittleMaterials.getSelectedValue();
         String cantLittleMaterials = amountLittlelMaterials.getText();
-        if (ValueListLittleMaterials != null) {
-            cotizaciones_controllers updateLittlelMaterial = new cotizaciones_controllers();
-            try {
-                updateLittlelMaterial.updateLittleMaterials(ValueListLittleMaterials, cantLittleMaterials);
-            } catch (SQLException ex) {
-                Logger.getLogger(panel_cotizacion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            String[] arraySplit = ValueListLittleMaterials.split("\\s+");
 
-            if (Integer.parseInt(arraySplit[4]) > Integer.parseInt(cantLittleMaterials)) {
-                // Vamos haciendo la structura del ticket para tornilleria
-                addElementsTornilleriaArea(ValueListLittleMaterials, cantLittleMaterials);
-            }
+        String[] arraySplit = ValueListLittleMaterials.split("/");
+        String[] arrayAmountSplit = arraySplit[3].split("\\s+"); // Obtenemos la cantidad
 
+        if (ValueListLittleMaterials != null & Integer.parseInt(cantLittleMaterials) > 0) {
+            if (Integer.parseInt(arrayAmountSplit[2]) >= Integer.parseInt(cantLittleMaterials)) {
+                try {
+                    updateLittlelMaterial.updateLittleMaterials(ValueListLittleMaterials, cantLittleMaterials);
+                    addElementsTornilleriaArea(ValueListLittleMaterials, cantLittleMaterials);
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "No se pudo hacer la actualizacion");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "La cantidad es mayor a la disponible");
+            }
+            //try {
+            //  updateLittlelMaterial.updateLittleMaterials(ValueListLittleMaterials, cantLittleMaterials);
+            //} catch (SQLException ex) {
+            //   Logger.getLogger(panel_cotizacion.class.getName()).log(Level.SEVERE, null, ex);
+            //}
+            //String[] arraySplit = ValueListLittleMaterials.split("\\s+");
+
+//            if (Integer.parseInt(arraySplit[4]) > Integer.parseInt(cantLittleMaterials)) {
+            // Vamos haciendo la structura del ticket para tornilleria
+            //              addElementsTornilleriaArea(ValueListLittleMaterials, cantLittleMaterials);
+            //        }
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un elemento y agregar una cantidad mayor a 0");
         }

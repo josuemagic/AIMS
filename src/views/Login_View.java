@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package views;
 
 import java.sql.SQLException;
@@ -13,13 +9,10 @@ import models.Login_Models;
 
 /**
  *
- * @author jo29h
+ * @author Jimenez De Lucio Josue
  */
 public class Login_View extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login_View
-     */
     public Login_View() {
         initComponents();
     }
