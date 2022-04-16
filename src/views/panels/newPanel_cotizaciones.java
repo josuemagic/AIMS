@@ -77,7 +77,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         cotizaciones_controllers structureBigTicket = new cotizaciones_controllers();
         String[] element = structureBigTicket.buildBigStructureTicket(listMaterials, medida);
 
-        Object objeto[] = {element[0], element[1], element[2], element[3], 1};
+        Object objeto[] = {element[0], element[1], element[2], element[3], "1"};
         model.addRow(objeto);
         jTable1.setModel(model);
 
@@ -189,13 +189,13 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
         jScrollPane3.setViewportView(jTable1);
@@ -309,37 +309,39 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1340, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 999, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteMaterialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMaterialButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        Owner_Models addReturnMaterial = new Owner_Models();
+
         String[] dataForDelet = new String[4];
 
         for (int i = 0; i < 4; i++) {
             dataForDelet[i] = (String) model.getValueAt(jTable1.getSelectedRow(), i);
         }
 
-        // Lo imprimimos en pantalla
-        System.out.println(dataForDelet[0]);
-        System.out.println(dataForDelet[1]);
-        System.out.println(dataForDelet[2]);
-        System.out.println(dataForDelet[3]);
-
-        // Ver como puedo obtener la cantidad
-        String dato = (String) model.getValueAt(jTable1.getSelectedRow(), 3);
-        System.out.println(dato);
-
-
+        if (!addReturnMaterial.re_add_BigElement(dataForDelet[0], dataForDelet[2])) {
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar el producto, \n Por favor reinicie el software");
+        } else {
+            try {
+                AddMaterialsList();
+                AddLittleMaterialsList();
+                model.removeRow(jTable1.getSelectedRow());
+            } catch (SQLException ex) {
+                Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_deleteMaterialButtonActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

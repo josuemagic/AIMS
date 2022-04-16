@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import proyecto.Conexion;
 
@@ -12,7 +14,7 @@ public class Owner_Models {
     public ResultSet getData() {
         Connection conectar = Conexion.getConexion(); // Conexion DB
         try {
-            PreparedStatement ps = conectar.prepareStatement("SELECT * FROM materials JOIN especifications ON materials.idespecifications = especifications.idespecifications ORDER BY especifications.price");
+            PreparedStatement ps = conectar.prepareStatement("SELECT * FROM materials JOIN especifications ON materials.idespecifications = especifications.idespecifications WHERE especifications.width > \"0\" ORDER BY especifications.price");
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return rs;
@@ -56,5 +58,24 @@ public class Owner_Models {
         PreparedStatement ps = conectar.prepareStatement(SQL);
         ps.executeUpdate();
         return null;
+    }
+
+    public boolean re_add_BigElement(String id, String extent) {
+        int idEspecifications = Integer.parseInt(id);
+        float extentEspecifications = Float.valueOf(extent);
+        String SQL = "UPDATE especifications "
+                + "SET especifications.width = especifications.width+\"" + extentEspecifications + "\" "
+                + "WHERE especifications.idespecifications = " + "\'" + idEspecifications + "\'";
+        Connection conectar = Conexion.getConexion(); // Conexion DB
+        PreparedStatement ps;
+        try {
+            ps = conectar.prepareStatement(SQL);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            return false;
+        }
+        return true;
+
+        //UPDATE especifications SET especifications.width = especifications.width+"1" WHERE especifications.idespecifications = '1'
     }
 }

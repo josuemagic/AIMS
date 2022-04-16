@@ -64,7 +64,6 @@ public class cotizaciones_controllers {
     }
 
     public String[] buildLittleStructureTicket(String littleMaterial, String amount) {
-        String element = "";
         float price = 0;
         String[] arrayReturn = new String[5];
 
@@ -72,7 +71,6 @@ public class cotizaciones_controllers {
 
         price = (Float.valueOf(arraySplit[6]) * Float.valueOf(amount));
 
-        element = arraySplit[1] + " Precio: " + price + "Cantidad: " + amount + "\n\n";
         arrayReturn[0] = arraySplit[0];
         arrayReturn[1] = arraySplit[1];
         arrayReturn[2] = arraySplit[2];
