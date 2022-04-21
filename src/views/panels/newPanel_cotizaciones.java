@@ -1,4 +1,3 @@
-
 package views.panels;
 
 import controllers.cotizaciones_controllers;
@@ -65,7 +64,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     }
 
     public void addElementsArea(String listMaterials, float medida) {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) tableCotizacion.getModel();
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         String fetch = dtf.format(LocalDateTime.now());
@@ -75,33 +74,33 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
 
         Object objeto[] = {element[0], element[1], element[2], element[3], "1"};
         model.addRow(objeto);
-        jTable1.setModel(model);
+        tableCotizacion.setModel(model);
 
         price += Float.parseFloat(element[3]);
         totalPriceTextField.setText(valueOf(price));
         try {
             AddMaterialsList();
         } catch (SQLException ex) {
-            Logger.getLogger(panel_cotizacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public void addElementsTornilleriaArea(String listLittlelMaterial, String amount) {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) tableCotizacion.getModel();
 
         cotizaciones_controllers buildTicket = new cotizaciones_controllers();
         String[] element = buildTicket.buildLittleStructureTicket(listLittlelMaterial, amount);
 
         Object objeto[] = {element[0], element[1], element[2], element[3], element[4]};
         model.addRow(objeto);
-        jTable1.setModel(model);
+        tableCotizacion.setModel(model);
 
         price += Float.parseFloat(element[3]);
         totalPriceTextField.setText(valueOf(price));
         try {
             AddLittleMaterialsList();
         } catch (SQLException ex) {
-            Logger.getLogger(panel_cotizacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -112,7 +111,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         model.addColumn("Medida");
         model.addColumn("Precio");
         model.addColumn("Cantidad");
-        jTable1.setModel(model);
+        tableCotizacion.setModel(model);
     }
 
     @SuppressWarnings("unchecked")
@@ -131,33 +130,37 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        searchBigMaterials = new javax.swing.JTextField();
-        searchLittleMaterial = new javax.swing.JTextField();
+        tableCotizacion = new javax.swing.JTable();
         totalPriceTextField = new javax.swing.JTextField();
         deleteMaterialButton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Materiales");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Materiales pequeños");
 
+        ListMaterials.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         ListMaterials.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        ListMaterials.setSelectionBackground(new java.awt.Color(0, 0, 204));
         jScrollPane1.setViewportView(ListMaterials);
 
+        ListLittleMaterials.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         ListLittleMaterials.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        ListLittleMaterials.setSelectionBackground(new java.awt.Color(0, 0, 204));
         jScrollPane2.setViewportView(ListLittleMaterials);
 
         medida.setText("0");
@@ -180,7 +183,9 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableCotizacion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        tableCotizacion.setForeground(new java.awt.Color(0, 0, 0));
+        tableCotizacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -191,15 +196,23 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        tableCotizacion.setSelectionBackground(new java.awt.Color(255, 51, 0));
+        tableCotizacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableCotizacionMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tableCotizacion);
 
         totalPriceTextField.setBackground(new java.awt.Color(0, 0, 51));
         totalPriceTextField.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         totalPriceTextField.setForeground(new java.awt.Color(255, 0, 51));
         totalPriceTextField.setText("Precio");
 
+        deleteMaterialButton.setBackground(new java.awt.Color(0, 0, 51));
         deleteMaterialButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        deleteMaterialButton.setText("Eliminar");
+        deleteMaterialButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/delete_element.png"))); // NOI18N
+        deleteMaterialButton.setEnabled(false);
         deleteMaterialButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteMaterialButtonActionPerformed(evt);
@@ -220,80 +233,74 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(177, 177, 177))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchBigMaterials, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(medida)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(67, 67, 67)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(searchLittleMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                        .addComponent(amountLittlelMaterials))
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                            .addComponent(medida, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(86, 86, 86)
-                                .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(71, 71, 71)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(231, 231, 231))
+                                .addGap(87, 87, 87)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(amountLittlelMaterials, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(228, 228, 228)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(85, 85, 85))))
+                        .addGap(66, 66, 66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(220, 220, 220))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(72, 72, 72)
+                        .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(76, 76, 76)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(searchBigMaterials, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                            .addComponent(searchLittleMaterial))
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
+                        .addGap(119, 119, 119)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(amountLittlelMaterials, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(medida, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(340, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(medida, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amountLittlelMaterials, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -316,12 +323,12 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
 
     private void deleteMaterialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMaterialButtonActionPerformed
         cotizaciones_controllers addReturnMaterial = new cotizaciones_controllers();
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) tableCotizacion.getModel();
 
         String[] dataForDelet = new String[5];
 
-        for (int i = 0; i <=4; i++) {
-            dataForDelet[i] = (String) model.getValueAt(jTable1.getSelectedRow(), i);
+        for (int i = 0; i <= 4; i++) {
+            dataForDelet[i] = (String) model.getValueAt(tableCotizacion.getSelectedRow(), i);
         }
 
         String[] arraySplit = dataForDelet[2].split("i"); // Saber si es bigMaterial o littleMaterial
@@ -330,7 +337,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             try {
                 addReturnMaterial.deletElement(4, dataForDelet[0], dataForDelet[4]);
                 AddLittleMaterialsList();
-                model.removeRow(jTable1.getSelectedRow());
+                model.removeRow(tableCotizacion.getSelectedRow());
             } catch (SQLException ex) {
                 Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -338,11 +345,14 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             try {
                 addReturnMaterial.deletElement(1, dataForDelet[0], dataForDelet[2]);
                 AddMaterialsList();
-                model.removeRow(jTable1.getSelectedRow());
+                model.removeRow(tableCotizacion.getSelectedRow());
             } catch (SQLException ex) {
                 Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        deleteMaterialButton.setEnabled(false);
+        price -= Float.parseFloat(dataForDelet[3]);
+        totalPriceTextField.setText(valueOf(price));
     }//GEN-LAST:event_deleteMaterialButtonActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -369,17 +379,6 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             } else {
                 JOptionPane.showMessageDialog(null, "La cantidad es mayor a la disponible");
             }
-            //try {
-            //  updateLittlelMaterial.updateLittleMaterials(ValueListLittleMaterials, cantLittleMaterials);
-            //} catch (SQLException ex) {
-            //   Logger.getLogger(panel_cotizacion.class.getName()).log(Level.SEVERE, null, ex);
-            //}
-            //String[] arraySplit = ValueListLittleMaterials.split("\\s+");
-
-//            if (Integer.parseInt(arraySplit[4]) > Integer.parseInt(cantLittleMaterials)) {
-            // Vamos haciendo la structura del ticket para tornilleria
-            //              addElementsTornilleriaArea(ValueListLittleMaterials, cantLittleMaterials);
-            //        }
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un elemento y agregar una cantidad mayor a 0");
         }
@@ -413,6 +412,10 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void tableCotizacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCotizacionMouseClicked
+        deleteMaterialButton.setEnabled(true);
+    }//GEN-LAST:event_tableCotizacionMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> ListLittleMaterials;
@@ -428,10 +431,8 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField medida;
-    private javax.swing.JTextField searchBigMaterials;
-    private javax.swing.JTextField searchLittleMaterial;
+    private javax.swing.JTable tableCotizacion;
     private javax.swing.JTextField totalPriceTextField;
     // End of variables declaration//GEN-END:variables
 }

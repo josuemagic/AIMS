@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import models.Owner_Models;
-import views.panels.panel_cotizacion;
+import views.panels.newPanel_cotizaciones;
 
 public class cotizaciones_controllers {
 
@@ -25,7 +25,7 @@ public class cotizaciones_controllers {
             //Actualizamos la medida del producto
             uptadeInch.updateData(idBigMaterials, widthBigMaterials);
         } catch (SQLException ex) {
-            Logger.getLogger(panel_cotizacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(newPanel_cotizaciones.class.getName()).log(Level.SEVERE, null, ex);
 
         }
     }

@@ -7,7 +7,7 @@ package views;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import views.panels.panel_cotizacion;
+import views.panels.newPanel_cotizaciones;
 
 /**
  *
@@ -42,22 +42,24 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelPrincipal.setBackground(new java.awt.Color(0, 0, 51));
+        PanelPrincipal.setMinimumSize(new java.awt.Dimension(1540, 1000));
         PanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelDinamyc.setBackground(new java.awt.Color(0, 0, 51));
+        PanelDinamyc.setPreferredSize(new java.awt.Dimension(1352, 1011));
 
         javax.swing.GroupLayout PanelDinamycLayout = new javax.swing.GroupLayout(PanelDinamyc);
         PanelDinamyc.setLayout(PanelDinamycLayout);
         PanelDinamycLayout.setHorizontalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
         );
         PanelDinamycLayout.setVerticalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
 
-        PanelPrincipal.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 660));
+        PanelPrincipal.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 1000));
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,6 +91,11 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         jPanel2.add(PanelButtonCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 250, 50));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("jLabel1");
 
@@ -109,7 +116,7 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 250, 50));
 
-        PanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 250, 660));
+        PanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, 220, 980));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,12 +133,16 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LabelButtonCotizacionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelButtonCotizacionMousePressed
-         panel_cotizacion PanelCotizaciones = new panel_cotizacion();
+        newPanel_cotizaciones PanelCotizaciones = new newPanel_cotizaciones();
         ShowPanel(PanelCotizaciones);
     }//GEN-LAST:event_LabelButtonCotizacionMousePressed
-    
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // CLICK DEL SEGUNDO BOTON 
+    }//GEN-LAST:event_jPanel1MouseClicked
+
     private void ShowPanel(JPanel p) {
-        p.setSize(850, 660);
+        p.setSize(1352, 1011);
         p.setLocation(0, 0);
 
         PanelDinamyc.removeAll();
@@ -139,6 +150,7 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         PanelDinamyc.revalidate();
         PanelDinamyc.repaint();
     }
+
     /**
      * @param args the command line arguments
      */

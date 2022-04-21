@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/views/panels/panels_inventory/addLittlelMaterial.java</file>
+            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/models/addUsers_Models.java</file>
             <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/views/Login_View.java</file>
-            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/models/Owner_Models.java</file>
-            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/controllers/cotizaciones_controllers.java</file>
+            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/models/Inventory_Models.java</file>
+            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/controllers/Inventory_Controllers.java</file>
             <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/views/panels/newPanel_cotizaciones.java</file>
+            <file>file:/C:/Users/jo29h/Documents/NetBeansProjects/AIMSV1/AIMS/src/views/panels/panels_inventory/addBigMaterial.java</file>
         </group>
     </open-files>
 </project-private>

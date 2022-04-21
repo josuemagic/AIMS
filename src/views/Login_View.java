@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import models.Login_Models;
 
 /**
- *
+ *%^
  * @author Jimenez De Lucio Josue
  */
 public class Login_View extends javax.swing.JFrame {
