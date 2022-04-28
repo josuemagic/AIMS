@@ -183,7 +183,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             }
         });
 
-        tableCotizacion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        tableCotizacion.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tableCotizacion.setForeground(new java.awt.Color(0, 0, 0));
         tableCotizacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -219,7 +219,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             }
         });
 
-        jButton4.setText("jButton4");
+        jButton4.setText("Hacer cotizacion");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -356,7 +356,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteMaterialButtonActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // Hacer cotizacion
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

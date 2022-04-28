@@ -1,4 +1,3 @@
-
 package views;
 
 import java.awt.BorderLayout;
@@ -7,11 +6,12 @@ import javax.swing.JPanel;
 import views.panels.newPanel_cotizaciones;
 import views.panels.panel_addUsers;
 import views.panels.newPanel_cotizaciones;
+import views.panels.panel_employees;
 import views.panels.panel_inventory;
 import views.panels.panel_payrolls;
 
 public class Menu_Owner_View extends javax.swing.JFrame {
-    
+
     public Menu_Owner_View() {
         initComponents();
         newPanel_cotizaciones PanelCotizaciones = new newPanel_cotizaciones();
@@ -34,6 +34,8 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         returnLoginView = new javax.swing.JButton();
+        panelEmployees = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         PanelDinamyc = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -156,6 +158,30 @@ public class Menu_Owner_View extends javax.swing.JFrame {
             }
         });
 
+        panelEmployees.setBackground(new java.awt.Color(0, 0, 102));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("              Empleados");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelEmployeesLayout = new javax.swing.GroupLayout(panelEmployees);
+        panelEmployees.setLayout(panelEmployeesLayout);
+        panelEmployeesLayout.setHorizontalGroup(
+            panelEmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelEmployeesLayout.setVerticalGroup(
+            panelEmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEmployeesLayout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout PanelButtonsLayout = new javax.swing.GroupLayout(PanelButtons);
         PanelButtons.setLayout(PanelButtonsLayout);
         PanelButtonsLayout.setHorizontalGroup(
@@ -168,6 +194,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(returnLoginView)
                 .addContainerGap())
+            .addComponent(panelEmployees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelButtonsLayout.setVerticalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +209,9 @@ public class Menu_Owner_View extends javax.swing.JFrame {
                 .addComponent(PanelButtonNominas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246))
+                .addGap(33, 33, 33)
+                .addComponent(panelEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166))
         );
 
         PrincipalPanel.add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 0, 250, 660));
@@ -243,6 +272,11 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_returnLoginViewActionPerformed
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        panel_employees PanelEmployees = new panel_employees();
+        ShowPanel(PanelEmployees);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     private void ShowPanel(JPanel p) {
         p.setSize(1600, 1011);
         p.setLocation(0, 0);
@@ -252,7 +286,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         PanelDinamyc.revalidate();
         PanelDinamyc.repaint();
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -299,8 +333,10 @@ public class Menu_Owner_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel panelEmployees;
     private javax.swing.JButton returnLoginView;
     // End of variables declaration//GEN-END:variables
 }

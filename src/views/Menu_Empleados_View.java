@@ -8,6 +8,7 @@ package views;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import views.panels.newPanel_cotizaciones;
+import views.panels.panel_inventory;
 
 /**
  *
@@ -36,13 +37,14 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         PanelButtonCotizacion = new javax.swing.JPanel();
         LabelButtonCotizacion = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        panelInventary = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        returnLoginView = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelPrincipal.setBackground(new java.awt.Color(0, 0, 51));
-        PanelPrincipal.setMinimumSize(new java.awt.Dimension(1540, 1000));
+        PanelPrincipal.setMinimumSize(new java.awt.Dimension(1910, 1000));
         PanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelDinamyc.setBackground(new java.awt.Color(0, 0, 51));
@@ -52,14 +54,14 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         PanelDinamyc.setLayout(PanelDinamycLayout);
         PanelDinamycLayout.setHorizontalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGap(0, 1610, Short.MAX_VALUE)
         );
         PanelDinamycLayout.setVerticalGroup(
             PanelDinamycLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1000, Short.MAX_VALUE)
         );
 
-        PanelPrincipal.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 1000));
+        PanelPrincipal.add(PanelDinamyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 1000));
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,42 +83,63 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         PanelButtonCotizacion.setLayout(PanelButtonCotizacionLayout);
         PanelButtonCotizacionLayout.setHorizontalGroup(
             PanelButtonCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonCotizacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         PanelButtonCotizacionLayout.setVerticalGroup(
             PanelButtonCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonCotizacionLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(PanelButtonCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 250, 50));
+        jPanel2.add(PanelButtonCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 250, 50));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelInventary.setBackground(new java.awt.Color(0, 0, 102));
+        panelInventary.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
+                panelInventaryMouseClicked(evt);
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("             Inventario");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout panelInventaryLayout = new javax.swing.GroupLayout(panelInventary);
+        panelInventary.setLayout(panelInventaryLayout);
+        panelInventaryLayout.setHorizontalGroup(
+            panelInventaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInventaryLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addContainerGap())
+        panelInventaryLayout.setVerticalGroup(
+            panelInventaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInventaryLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 250, 50));
+        jPanel2.add(panelInventary, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 250, 50));
 
-        PanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, 220, 980));
+        returnLoginView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/view_exit.png"))); // NOI18N
+        returnLoginView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnLoginViewActionPerformed(evt);
+            }
+        });
+        jPanel2.add(returnLoginView, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 70, 80));
+
+        PanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 10, 230, 900));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,12 +160,23 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         ShowPanel(PanelCotizaciones);
     }//GEN-LAST:event_LabelButtonCotizacionMousePressed
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+    private void panelInventaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelInventaryMouseClicked
         // CLICK DEL SEGUNDO BOTON 
-    }//GEN-LAST:event_jPanel1MouseClicked
+    }//GEN-LAST:event_panelInventaryMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        panel_inventory PanelInventary = new panel_inventory();
+        ShowPanel(PanelInventary);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void returnLoginViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginViewActionPerformed
+        Login_View LV = new Login_View();
+        LV.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_returnLoginViewActionPerformed
 
     private void ShowPanel(JPanel p) {
-        p.setSize(1352, 1011);
+        p.setSize(1600, 1011);
         p.setLocation(0, 0);
 
         PanelDinamyc.removeAll();
@@ -192,7 +226,8 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
     private javax.swing.JPanel PanelDinamyc;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel panelInventary;
+    private javax.swing.JButton returnLoginView;
     // End of variables declaration//GEN-END:variables
 }

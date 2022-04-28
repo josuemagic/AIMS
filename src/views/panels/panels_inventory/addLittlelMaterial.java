@@ -35,8 +35,9 @@ public class addLittlelMaterial extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
-        addLittlelMaterial.setBackground(new java.awt.Color(0, 51, 51));
+        addLittlelMaterial.setBackground(new java.awt.Color(0, 0, 153));
 
         textName.setText("Nombre");
         textName.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -71,7 +72,7 @@ public class addLittlelMaterial extends javax.swing.JPanel {
             }
         });
 
-        addLittleMaterial.setText("Agregar Material");
+        addLittleMaterial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/confirm.png"))); // NOI18N
         addLittleMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addLittleMaterialActionPerformed(evt);
@@ -94,6 +95,10 @@ public class addLittlelMaterial extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Precio");
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Confirmar");
+
         javax.swing.GroupLayout addLittlelMaterialLayout = new javax.swing.GroupLayout(addLittlelMaterial);
         addLittlelMaterial.setLayout(addLittlelMaterialLayout);
         addLittlelMaterialLayout.setHorizontalGroup(
@@ -105,20 +110,24 @@ public class addLittlelMaterial extends javax.swing.JPanel {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textIncch, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(128, 128, 128)
                 .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addLittlelMaterialLayout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                        .addComponent(addLittleMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(143, 143, 143))
-                    .addGroup(addLittlelMaterialLayout.createSequentialGroup()
-                        .addGap(128, 128, 128)
                         .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(addLittlelMaterialLayout.createSequentialGroup()
+                        .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(addLittlelMaterialLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                        .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(addLittleMaterial))
+                        .addGap(188, 188, 188))))
         );
         addLittlelMaterialLayout.setVerticalGroup(
             addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,11 +144,7 @@ public class addLittlelMaterial extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)))
-                .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(addLittlelMaterialLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(addLittleMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addLittlelMaterialLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -149,7 +154,13 @@ public class addLittlelMaterial extends javax.swing.JPanel {
                         .addGroup(addLittlelMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textIncch, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(142, 142, 142))))
+                        .addGap(142, 142, 142))
+                    .addGroup(addLittlelMaterialLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(addLittleMaterial)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -212,6 +223,7 @@ public class addLittlelMaterial extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField textAmount;
     private javax.swing.JTextField textIncch;
     private javax.swing.JTextField textName;

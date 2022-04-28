@@ -43,8 +43,9 @@ public class addBigMaterial extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
-        addPanelBigMaterial.setBackground(new java.awt.Color(0, 51, 51));
+        addPanelBigMaterial.setBackground(new java.awt.Color(0, 0, 153));
 
         nameMaterial.setText("Nombre ");
         nameMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -88,7 +89,7 @@ public class addBigMaterial extends javax.swing.JPanel {
             }
         });
 
-        addButtonMaterial.setText("Agregar ");
+        addButtonMaterial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/confirm.png"))); // NOI18N
         addButtonMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonMaterialActionPerformed(evt);
@@ -119,6 +120,10 @@ public class addBigMaterial extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Largo");
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Confirmar");
+
         javax.swing.GroupLayout addPanelBigMaterialLayout = new javax.swing.GroupLayout(addPanelBigMaterial);
         addPanelBigMaterial.setLayout(addPanelBigMaterialLayout);
         addPanelBigMaterialLayout.setHorizontalGroup(
@@ -135,16 +140,22 @@ public class addBigMaterial extends javax.swing.JPanel {
                         .addGap(80, 80, 80)
                         .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
-                                .addComponent(inchMaterial)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addButtonMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(70, 70, 70))
-                            .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
                                 .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(widthMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelBigMaterialLayout.createSequentialGroup()
+                                .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
+                                        .addComponent(inchMaterial)
+                                        .addGap(139, 139, 139)))
+                                .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addButtonMaterial)
+                                    .addComponent(jLabel7))
+                                .addGap(96, 96, 96))))
                     .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
                         .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
@@ -172,12 +183,13 @@ public class addBigMaterial extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(caliberMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inchMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addButtonMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addButtonMaterial))
                 .addGap(32, 32, 32)
                 .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
@@ -262,6 +274,7 @@ public class addBigMaterial extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nameMaterial;
     private javax.swing.JTextField priceMaterial;
     private javax.swing.JTextField widthMaterial;

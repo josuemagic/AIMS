@@ -95,7 +95,7 @@ public class panel_addUsers extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Administracion de empleados");
 
-        tableEmployees.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        tableEmployees.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tableEmployees.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -322,7 +322,7 @@ public class panel_addUsers extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 222, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -409,8 +409,9 @@ public class panel_addUsers extends javax.swing.JPanel {
         if (name == 0) {
             addUsers_controllers AUC = new addUsers_controllers();
             AUC.validationDeletUser(dataForDelet[0]);
-            buttonDeletUser.setEnabled(false);
-        }
+        } 
+        buttonDeletUser.setEnabled(false);
+
 
         tableStructure();
         try {
