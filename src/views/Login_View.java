@@ -1,4 +1,3 @@
-
 package views;
 
 import java.sql.SQLException;
@@ -8,7 +7,8 @@ import javax.swing.JOptionPane;
 import models.Login_Models;
 
 /**
- *%^
+ * %^
+ *
  * @author Jimenez De Lucio Josue
  */
 public class Login_View extends javax.swing.JFrame {
@@ -16,6 +16,7 @@ public class Login_View extends javax.swing.JFrame {
     public Login_View() {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,30 +33,29 @@ public class Login_View extends javax.swing.JFrame {
         PanelButtonLogin = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         LabelCloseSystem = new javax.swing.JLabel();
-        LabelImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PrincipalPanel.setBackground(new java.awt.Color(0, 0, 51));
         PrincipalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelForm.setBackground(new java.awt.Color(0, 0, 51));
+        PanelForm.setBackground(new java.awt.Color(204, 204, 204));
         PanelForm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelImageLogo.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        LabelImageLogo.setForeground(new java.awt.Color(255, 255, 255));
+        LabelImageLogo.setForeground(new java.awt.Color(0, 0, 0));
         LabelImageLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
         LabelImageLogo.setText("Iniciar Sesion");
         PanelForm.add(LabelImageLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 14, 286, 83));
 
-        LabelUser.setFont(new java.awt.Font("Dialog", 0, 30)); // NOI18N
-        LabelUser.setForeground(new java.awt.Color(255, 255, 255));
+        LabelUser.setFont(new java.awt.Font("High Tower Text", 3, 30)); // NOI18N
+        LabelUser.setForeground(new java.awt.Color(0, 0, 0));
         LabelUser.setText("Usuario");
         PanelForm.add(LabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 103, 121, 44));
 
-        TextFieldUser.setBackground(new java.awt.Color(0, 0, 51));
+        TextFieldUser.setBackground(new java.awt.Color(153, 153, 153));
         TextFieldUser.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        TextFieldUser.setForeground(new java.awt.Color(255, 255, 255));
+        TextFieldUser.setForeground(new java.awt.Color(0, 0, 0));
         TextFieldUser.setText("Introducir usuario");
         TextFieldUser.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 1));
         TextFieldUser.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,17 +63,17 @@ public class Login_View extends javax.swing.JFrame {
                 TextFieldUserMousePressed(evt);
             }
         });
-        PanelForm.add(TextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 290, 46));
+        PanelForm.add(TextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 310, 46));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("High Tower Text", 3, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Contraseña");
         PanelForm.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 175, 37));
 
-        PasswordField.setBackground(new java.awt.Color(0, 0, 51));
+        PasswordField.setBackground(new java.awt.Color(153, 153, 153));
         PasswordField.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        PasswordField.setForeground(new java.awt.Color(204, 204, 204));
+        PasswordField.setForeground(new java.awt.Color(0, 0, 0));
         PasswordField.setText("********");
         PasswordField.setBorder(null);
         PasswordField.setNextFocusableComponent(PanelButtonLogin);
@@ -92,7 +92,7 @@ public class Login_View extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(0, 0, 51));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("_____________________________________________");
-        PanelForm.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 300, 30));
+        PanelForm.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 310, 30));
 
         PanelButtonLogin.setBackground(new java.awt.Color(0, 102, 153));
 
@@ -135,12 +135,9 @@ public class Login_View extends javax.swing.JFrame {
                 LabelCloseSystemMousePressed(evt);
             }
         });
-        PanelForm.add(LabelCloseSystem, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 70, 70));
+        PanelForm.add(LabelCloseSystem, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 70, 70));
 
-        PrincipalPanel.add(PanelForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 510, 490));
-
-        LabelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/city.png"))); // NOI18N
-        PrincipalPanel.add(LabelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 490));
+        PrincipalPanel.add(PanelForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -234,7 +231,6 @@ public class Login_View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelCloseSystem;
-    private javax.swing.JLabel LabelImage;
     private javax.swing.JLabel LabelImageLogo;
     private javax.swing.JLabel LabelUser;
     private javax.swing.JPanel PanelButtonLogin;

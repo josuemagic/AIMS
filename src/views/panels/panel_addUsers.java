@@ -88,11 +88,11 @@ public class panel_addUsers extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         buttonDeletUser = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 51));
+        setBackground(new java.awt.Color(204, 204, 204));
         setPreferredSize(new java.awt.Dimension(1306, 981));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Administracion de empleados");
 
         tableEmployees.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -115,7 +115,7 @@ public class panel_addUsers extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableEmployees);
 
-        addEmployeesPanel.setBackground(new java.awt.Color(0, 0, 102));
+        addEmployeesPanel.setBackground(new java.awt.Color(102, 102, 102));
         addEmployeesPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         userTextField.setText("Usuario");
@@ -133,8 +133,8 @@ public class panel_addUsers extends javax.swing.JPanel {
         });
 
         addEmployee.setBackground(new java.awt.Color(0, 0, 204));
-        addEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/add_people.png"))); // NOI18N
-        addEmployee.setText("Agregar");
+        addEmployee.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        addEmployee.setText("Agregar Usuario");
         addEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEmployeeActionPerformed(evt);
@@ -191,19 +191,19 @@ public class panel_addUsers extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("High Tower Text", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Usuario");
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("High Tower Text", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contraseña");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("High Tower Text", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Rectificar contraseña");
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("High Tower Text", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Correo");
 
@@ -259,8 +259,8 @@ public class panel_addUsers extends javax.swing.JPanel {
                         .addGap(0, 50, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addEmployeesPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
         addEmployeesPanelLayout.setVerticalGroup(
             addEmployeesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,21 +294,21 @@ public class panel_addUsers extends javax.swing.JPanel {
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
                         .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(73, Short.MAX_VALUE))
                     .addGroup(addEmployeesPanelLayout.createSequentialGroup()
                         .addGroup(addEmployeesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                        .addComponent(addEmployee)
-                        .addGap(15, 15, 15))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
         );
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Agregar Empleado");
 
-        buttonDeletUser.setBackground(new java.awt.Color(0, 0, 51));
+        buttonDeletUser.setBackground(new java.awt.Color(0, 0, 0));
         buttonDeletUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/delete_people.png"))); // NOI18N
         buttonDeletUser.setEnabled(false);
         buttonDeletUser.addActionListener(new java.awt.event.ActionListener() {
@@ -349,37 +349,13 @@ public class panel_addUsers extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonDeletUser))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(addEmployeesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
-        addUsers_controllers AEM = new addUsers_controllers();
-
-        String user = userTextField.getText();
-        String password = passwordTextField.getText();
-        String passwordValidation = passwordTextField2.getText();
-        String email = emailTextField.getText();
-        int root = 0;
-        if (radioButtonRoot.isSelected() || radioButtonNoRoot.isSelected()) {
-            root = radioButtonRoot.isSelected() ? 1 : 0;
-        } else {
-            root = 2;
-        }
-
-        AEM.validationAddEmployee(user, password, passwordValidation, email, root);
-        tableStructure();
-        try {
-            getEmployees();
-        } catch (SQLException ex) {
-            Logger.getLogger(panel_addUsers.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        resetForm();
-    }//GEN-LAST:event_addEmployeeActionPerformed
 
     private void userTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTextFieldMouseClicked
         userTextField.setText("");
@@ -432,6 +408,30 @@ public class panel_addUsers extends javax.swing.JPanel {
     private void tableEmployeesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableEmployeesMouseClicked
         buttonDeletUser.setEnabled(true);
     }//GEN-LAST:event_tableEmployeesMouseClicked
+
+    private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
+        addUsers_controllers AEM = new addUsers_controllers();
+
+        String user = userTextField.getText();
+        String password = passwordTextField.getText();
+        String passwordValidation = passwordTextField2.getText();
+        String email = emailTextField.getText();
+        int root = 0;
+        if (radioButtonRoot.isSelected() || radioButtonNoRoot.isSelected()) {
+            root = radioButtonRoot.isSelected() ? 1 : 0;
+        } else {
+            root = 2;
+        }
+
+        AEM.validationAddEmployee(user, password, passwordValidation, email, root);
+        tableStructure();
+        try {
+            getEmployees();
+        } catch (SQLException ex) {
+            Logger.getLogger(panel_addUsers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        resetForm();
+    }//GEN-LAST:event_addEmployeeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

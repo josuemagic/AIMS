@@ -12,6 +12,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import models.Owner_Models;
+import views.Menu_Owner_View;
 
 /**
  *
@@ -134,15 +135,16 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         totalPriceTextField = new javax.swing.JTextField();
         deleteMaterialButton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("High Tower Text", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Materiales");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("High Tower Text", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Materiales pequeños");
 
         ListMaterials.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -204,12 +206,12 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(tableCotizacion);
 
-        totalPriceTextField.setBackground(new java.awt.Color(0, 0, 51));
-        totalPriceTextField.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        totalPriceTextField.setForeground(new java.awt.Color(255, 0, 51));
+        totalPriceTextField.setBackground(new java.awt.Color(153, 153, 153));
+        totalPriceTextField.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
+        totalPriceTextField.setForeground(new java.awt.Color(0, 0, 0));
         totalPriceTextField.setText("Precio");
 
-        deleteMaterialButton.setBackground(new java.awt.Color(0, 0, 51));
+        deleteMaterialButton.setBackground(new java.awt.Color(0, 0, 0));
         deleteMaterialButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         deleteMaterialButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/delete_element.png"))); // NOI18N
         deleteMaterialButton.setEnabled(false);
@@ -219,12 +221,17 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             }
         });
 
-        jButton4.setText("Hacer cotizacion");
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/confirm.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("High Tower Text", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Realizar Compra");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -254,17 +261,20 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(228, 228, 228)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(299, 299, 299)
+                                .addComponent(jLabel3))
+                            .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -272,13 +282,18 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(72, 72, 72)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                .addComponent(deleteMaterialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(48, 48, 48)
                         .addComponent(totalPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
@@ -356,7 +371,23 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteMaterialButtonActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // Hacer cotizacion
+        cotizaciones_controllers CC = new cotizaciones_controllers();
+
+        String price = totalPriceTextField.getText();
+
+        CC.addNewSales(price);
+        for (int i = 0; i < tableCotizacion.getRowCount(); i++) {
+            Object[] dataElement = new String[6];
+
+            dataElement[0] = tableCotizacion.getValueAt(i, 0);
+            dataElement[1] = tableCotizacion.getValueAt(i, 1);
+            dataElement[2] = tableCotizacion.getValueAt(i, 2);
+            dataElement[3] = tableCotizacion.getValueAt(i, 3);
+            dataElement[4] = tableCotizacion.getValueAt(i, 4);
+            dataElement[5] = totalPriceTextField.getText();
+            CC.addCotization((String[]) dataElement);
+        }
+        JOptionPane.showMessageDialog(null, "Se hizo la compra");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -427,6 +458,7 @@ public class newPanel_cotizaciones extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

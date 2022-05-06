@@ -44,7 +44,6 @@ public class panel_inventory extends javax.swing.JPanel {
             Object objeto[] = {LittledataTable.getString("idtornilleria"), LittledataTable.getString("name"), LittledataTable.getString("inch") + " in", LittledataTable.getString("price"), LittledataTable.getString("amount")};
             model.addRow(objeto);
             tableInventary.setModel(model);
-            System.out.print("se hizo");
         }
     }
 
@@ -79,10 +78,11 @@ public class panel_inventory extends javax.swing.JPanel {
         addBigMaterial = new javax.swing.JButton();
         addLittlelMaterial = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 51));
+        setBackground(new java.awt.Color(204, 204, 204));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Inventario");
 
         tableInventary.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -105,7 +105,7 @@ public class panel_inventory extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableInventary);
 
-        panelDinamycAddMaterial.setBackground(new java.awt.Color(0, 0, 51));
+        panelDinamycAddMaterial.setBackground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout panelDinamycAddMaterialLayout = new javax.swing.GroupLayout(panelDinamycAddMaterial);
         panelDinamycAddMaterial.setLayout(panelDinamycAddMaterialLayout);
@@ -118,6 +118,8 @@ public class panel_inventory extends javax.swing.JPanel {
             .addGap(0, 406, Short.MAX_VALUE)
         );
 
+        addBigMaterial.setBackground(new java.awt.Color(0, 0, 0));
+        addBigMaterial.setForeground(new java.awt.Color(255, 255, 255));
         addBigMaterial.setText("Agregar Material Grande");
         addBigMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +127,8 @@ public class panel_inventory extends javax.swing.JPanel {
             }
         });
 
+        addLittlelMaterial.setBackground(new java.awt.Color(0, 0, 0));
+        addLittlelMaterial.setForeground(new java.awt.Color(255, 255, 255));
         addLittlelMaterial.setText("Agregar Material Pequeño");
         addLittlelMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

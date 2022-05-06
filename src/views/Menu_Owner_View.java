@@ -9,9 +9,10 @@ import views.panels.newPanel_cotizaciones;
 import views.panels.panel_employees;
 import views.panels.panel_inventory;
 import views.panels.panel_payrolls;
+import views.panels.panel_sales;
 
 public class Menu_Owner_View extends javax.swing.JFrame {
-
+     
     public Menu_Owner_View() {
         initComponents();
         newPanel_cotizaciones PanelCotizaciones = new newPanel_cotizaciones();
@@ -36,17 +37,21 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         returnLoginView = new javax.swing.JButton();
         panelEmployees = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        panelManagmentCotization = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        userText = new javax.swing.JLabel();
         PanelDinamyc = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PrincipalPanel.setBackground(new java.awt.Color(0, 0, 51));
+        PrincipalPanel.setBackground(new java.awt.Color(102, 102, 102));
         PrincipalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelButtons.setBackground(new java.awt.Color(51, 0, 153));
+        PanelButtons.setBackground(new java.awt.Color(102, 102, 102));
 
-        PanelButtonCotizaciones.setBackground(new java.awt.Color(0, 0, 102));
+        PanelButtonCotizaciones.setBackground(new java.awt.Color(0, 0, 0));
 
+        LabelButtonCotizacion.setBackground(new java.awt.Color(0, 0, 0));
         LabelButtonCotizacion.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         LabelButtonCotizacion.setForeground(new java.awt.Color(255, 255, 255));
         LabelButtonCotizacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -66,10 +71,12 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         );
         PanelButtonCotizacionesLayout.setVerticalGroup(
             PanelButtonCotizacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+            .addGroup(PanelButtonCotizacionesLayout.createSequentialGroup()
+                .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,12 +98,10 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        PanelButtonNominas.setBackground(new java.awt.Color(0, 0, 102));
+        PanelButtonNominas.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,7 +130,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,9 +151,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
         );
 
         returnLoginView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/view_exit.png"))); // NOI18N
@@ -158,7 +161,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
             }
         });
 
-        panelEmployees.setBackground(new java.awt.Color(0, 0, 102));
+        panelEmployees.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,13 +176,38 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         panelEmployees.setLayout(panelEmployeesLayout);
         panelEmployeesLayout.setHorizontalGroup(
             panelEmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEmployeesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelEmployeesLayout.setVerticalGroup(
             panelEmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEmployeesLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        panelManagmentCotization.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("     Registro de cotizaciones");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelManagmentCotizationLayout = new javax.swing.GroupLayout(panelManagmentCotization);
+        panelManagmentCotization.setLayout(panelManagmentCotizationLayout);
+        panelManagmentCotizationLayout.setHorizontalGroup(
+            panelManagmentCotizationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelManagmentCotizationLayout.setVerticalGroup(
+            panelManagmentCotizationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelButtonsLayout = new javax.swing.GroupLayout(PanelButtons);
@@ -190,18 +218,23 @@ public class Menu_Owner_View extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(PanelButtonNominas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelEmployees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelManagmentCotization, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelButtonsLayout.createSequentialGroup()
+                .addContainerGap(168, Short.MAX_VALUE)
                 .addComponent(returnLoginView)
                 .addContainerGap())
-            .addComponent(panelEmployees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(userText, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelButtonsLayout.setVerticalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelButtonsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(returnLoginView, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(PanelButtonCotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,14 +242,18 @@ public class Menu_Owner_View extends javax.swing.JFrame {
                 .addComponent(PanelButtonNominas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(panelEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166))
+                .addGap(18, 18, 18)
+                .addComponent(panelManagmentCotization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(userText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         PrincipalPanel.add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 0, 250, 660));
 
-        PanelDinamyc.setBackground(new java.awt.Color(0, 0, 51));
+        PanelDinamyc.setBackground(new java.awt.Color(153, 153, 153));
         PanelDinamyc.setPreferredSize(new java.awt.Dimension(1352, 1011));
 
         javax.swing.GroupLayout PanelDinamycLayout = new javax.swing.GroupLayout(PanelDinamyc);
@@ -277,6 +314,11 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         ShowPanel(PanelEmployees);
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        panel_sales PanelRegisterCotizations = new panel_sales();
+        ShowPanel(PanelRegisterCotizations);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
     private void ShowPanel(JPanel p) {
         p.setSize(1600, 1011);
         p.setLocation(0, 0);
@@ -286,7 +328,7 @@ public class Menu_Owner_View extends javax.swing.JFrame {
         PanelDinamyc.revalidate();
         PanelDinamyc.repaint();
     }
-
+    
     /**
      * @param args the command line arguments
      */
@@ -334,9 +376,12 @@ public class Menu_Owner_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel panelEmployees;
+    private javax.swing.JPanel panelManagmentCotization;
     private javax.swing.JButton returnLoginView;
+    private javax.swing.JLabel userText;
     // End of variables declaration//GEN-END:variables
 }

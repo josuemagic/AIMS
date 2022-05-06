@@ -74,13 +74,13 @@ public class panel_payrolls extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         labelTotal = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 51));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nominas");
 
-        tablePayrolls.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tablePayrolls.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tablePayrolls.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -94,12 +94,12 @@ public class panel_payrolls extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tablePayrolls);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setText("Total estimado:");
 
-        labelTotal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        labelTotal.setForeground(new java.awt.Color(255, 255, 255));
+        labelTotal.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
+        labelTotal.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -113,12 +113,12 @@ public class panel_payrolls extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(148, 148, 148)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1327, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(labelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,12 +126,12 @@ public class panel_payrolls extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

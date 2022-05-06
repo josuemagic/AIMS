@@ -3,9 +3,13 @@ package controllers;
 import static java.lang.String.valueOf;
 import java.sql.SQLException;
 import java.util.logging.Level;
+import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import models.Owner_Models;
+import models.cotization_Models;
 import views.panels.newPanel_cotizaciones;
 
 public class cotizaciones_controllers {
@@ -86,5 +90,28 @@ public class cotizaciones_controllers {
         } else {
             return addReturnMaterial.re_add_LillteElemet(id, extent);
         }
+    }
+
+    public void addCotization(String[] dataElement) {
+        cotization_Models CM = new cotization_Models();
+        ResultSet data = CM.getLastIdSales();
+        int id = 1;
+        try {
+            while (data.next()) {
+                id += Integer.valueOf(data.getString("idSales"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(cotizaciones_controllers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        CM.insertElementSales(dataElement, id);
+    }
+
+    public void addNewSales(String price) {
+        cotization_Models CM = new cotization_Models();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        String date = dtf.format(LocalDateTime.now());
+
+        CM.addNewSales(price, date);
     }
 }
