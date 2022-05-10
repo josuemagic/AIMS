@@ -120,7 +120,7 @@ public class panel_inventory extends javax.swing.JPanel {
 
         addBigMaterial.setBackground(new java.awt.Color(0, 0, 0));
         addBigMaterial.setForeground(new java.awt.Color(255, 255, 255));
-        addBigMaterial.setText("Agregar Material Grande");
+        addBigMaterial.setText("Agregar Material");
         addBigMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBigMaterialActionPerformed(evt);
@@ -129,7 +129,7 @@ public class panel_inventory extends javax.swing.JPanel {
 
         addLittlelMaterial.setBackground(new java.awt.Color(0, 0, 0));
         addLittlelMaterial.setForeground(new java.awt.Color(255, 255, 255));
-        addLittlelMaterial.setText("Agregar Material Pequeño");
+        addLittlelMaterial.setText("Agregar Material De Herrajeria");
         addLittlelMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addLittlelMaterialActionPerformed(evt);

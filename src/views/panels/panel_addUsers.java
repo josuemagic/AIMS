@@ -93,7 +93,7 @@ public class panel_addUsers extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Administracion de empleados");
+        jLabel1.setText("Administracion de usuarios");
 
         tableEmployees.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tableEmployees.setModel(new javax.swing.table.DefaultTableModel(

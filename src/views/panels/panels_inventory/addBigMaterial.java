@@ -248,7 +248,7 @@ public class addBigMaterial extends javax.swing.JPanel {
     }//GEN-LAST:event_nameMaterialMouseClicked
 
     private void colotMaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colotMaterialMouseClicked
-        nameMaterial.setText("");
+        colotMaterial.setText("");
     }//GEN-LAST:event_colotMaterialMouseClicked
 
     private void caliberMaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caliberMaterialMouseClicked

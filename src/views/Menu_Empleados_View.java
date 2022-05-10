@@ -21,6 +21,9 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
      */
     public Menu_Empleados_View() {
         initComponents();
+        newPanel_cotizaciones PanelCotizaciones = new newPanel_cotizaciones();
+        ShowPanel(PanelCotizaciones);
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -83,20 +86,18 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         PanelButtonCotizacion.setLayout(PanelButtonCotizacionLayout);
         PanelButtonCotizacionLayout.setHorizontalGroup(
             PanelButtonCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonCotizacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelButtonCotizacionLayout.createSequentialGroup()
                 .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelButtonCotizacionLayout.setVerticalGroup(
             PanelButtonCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonCotizacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(LabelButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(PanelButtonCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 250, 50));
+        jPanel2.add(PanelButtonCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 240, 50));
 
         panelInventary.setBackground(new java.awt.Color(0, 0, 0));
         panelInventary.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,18 +121,17 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
             panelInventaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInventaryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelInventaryLayout.setVerticalGroup(
             panelInventaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInventaryLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(panelInventary, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 250, 50));
+        jPanel2.add(panelInventary, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 240, 50));
 
         returnLoginView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/view_exit.png"))); // NOI18N
         returnLoginView.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +141,7 @@ public class Menu_Empleados_View extends javax.swing.JFrame {
         });
         jPanel2.add(returnLoginView, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 70, 80));
 
-        PanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 10, 230, 900));
+        PanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 10, 280, 900));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
