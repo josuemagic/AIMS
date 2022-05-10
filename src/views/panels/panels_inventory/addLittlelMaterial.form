@@ -134,6 +134,7 @@
           <Events>
             <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="textNameMouseDragged"/>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textNameMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textNameKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="textIncch">
@@ -142,6 +143,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textIncchMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textIncchKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="textAmount">
@@ -150,6 +152,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textAmountMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textAmountKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="textPrice">
@@ -158,6 +161,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textPriceMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textPriceKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="addLittleMaterial">

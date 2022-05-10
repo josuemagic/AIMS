@@ -133,12 +133,27 @@ public class panel_employees extends javax.swing.JPanel {
                 textNombreActionPerformed(evt);
             }
         });
+        textNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textNombreKeyTyped(evt);
+            }
+        });
 
         secondName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         secondName.setText("Primer apellido");
+        secondName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                secondNameKeyTyped(evt);
+            }
+        });
 
         thirdNameText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         thirdNameText.setText("Segundo apellido");
+        thirdNameText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                thirdNameTextKeyTyped(evt);
+            }
+        });
 
         emailText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         emailText.setText("Email");
@@ -148,6 +163,11 @@ public class panel_employees extends javax.swing.JPanel {
 
         telephoneText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         telephoneText.setText("Telephone");
+        telephoneText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telephoneTextKeyTyped(evt);
+            }
+        });
 
         addEmployees.setBackground(new java.awt.Color(0, 0, 0));
         addEmployees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/add_user.png"))); // NOI18N
@@ -187,9 +207,19 @@ public class panel_employees extends javax.swing.JPanel {
 
         wageText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         wageText.setText("Ganancias");
+        wageText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                wageTextKeyTyped(evt);
+            }
+        });
 
         employeePositionText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         employeePositionText.setText("Posicicion");
+        employeePositionText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                employeePositionTextKeyTyped(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("High Tower Text", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -342,8 +372,7 @@ public class panel_employees extends javax.swing.JPanel {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resetFormButton)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(resetFormButton))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
@@ -370,8 +399,8 @@ public class panel_employees extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(telephoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(thirdNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(115, Short.MAX_VALUE))))
+                            .addComponent(thirdNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -440,6 +469,88 @@ public class panel_employees extends javax.swing.JPanel {
         employeePositionText.setText("");
         wageText.setText("");
     }//GEN-LAST:event_resetFormButtonActionPerformed
+
+    private void textNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textNombreKeyTyped
+         int key = evt.getKeyChar();
+
+    boolean mayusculas = key >= 65 && key <= 90;
+    boolean minusculas = key >= 97 && key <= 122;
+    boolean espacio = key == 32;
+            
+     if (!(minusculas || mayusculas || espacio))
+    {
+        evt.consume();
+    }
+    }//GEN-LAST:event_textNombreKeyTyped
+
+    private void secondNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_secondNameKeyTyped
+        int key = evt.getKeyChar();
+
+    boolean mayusculas = key >= 65 && key <= 90;
+    boolean minusculas = key >= 97 && key <= 122;
+    boolean espacio = key == 32;
+            
+     if (!(minusculas || mayusculas || espacio))
+    {
+        evt.consume();
+    }
+    }//GEN-LAST:event_secondNameKeyTyped
+
+    private void thirdNameTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_thirdNameTextKeyTyped
+         int key = evt.getKeyChar();
+
+    boolean mayusculas = key >= 65 && key <= 90;
+    boolean minusculas = key >= 97 && key <= 122;
+    boolean espacio = key == 32;
+            
+     if (!(minusculas || mayusculas || espacio))
+    {
+        evt.consume();
+    }
+    }//GEN-LAST:event_thirdNameTextKeyTyped
+
+    private void employeePositionTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_employeePositionTextKeyTyped
+         int key = evt.getKeyChar();
+
+    boolean mayusculas = key >= 65 && key <= 90;
+    boolean minusculas = key >= 97 && key <= 122;
+    boolean espacio = key == 32;
+            
+     if (!(minusculas || mayusculas || espacio))
+    {
+        evt.consume();
+    }
+    }//GEN-LAST:event_employeePositionTextKeyTyped
+
+    private void telephoneTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telephoneTextKeyTyped
+         int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (telephoneText.getText().trim().length() == 10) {
+        evt.consume();
+    }
+    }//GEN-LAST:event_telephoneTextKeyTyped
+
+    private void wageTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wageTextKeyTyped
+         int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (wageText.getText().trim().length() == 10) {
+        evt.consume();
+    }
+    }//GEN-LAST:event_wageTextKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

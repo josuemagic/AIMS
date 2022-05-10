@@ -64,13 +64,13 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Component id="jLabel4" min="-2" pref="53" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="inchMaterial" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -157,6 +157,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nameMaterialMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameMaterialKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="colotMaterial">
@@ -165,6 +166,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="colotMaterialMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="colotMaterialKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="caliberMaterial">
@@ -173,6 +175,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="caliberMaterialMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="caliberMaterialKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="inchMaterial">
@@ -181,6 +184,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inchMaterialMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="inchMaterialKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="priceMaterial">
@@ -189,6 +193,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priceMaterialMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="priceMaterialKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="widthMaterial">
@@ -197,6 +202,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="widthMaterialMouseClicked"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="widthMaterialKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="addButtonMaterial">

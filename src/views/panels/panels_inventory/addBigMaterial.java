@@ -53,11 +53,21 @@ public class addBigMaterial extends javax.swing.JPanel {
                 nameMaterialMouseClicked(evt);
             }
         });
+        nameMaterial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nameMaterialKeyTyped(evt);
+            }
+        });
 
         colotMaterial.setText("Color");
         colotMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 colotMaterialMouseClicked(evt);
+            }
+        });
+        colotMaterial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                colotMaterialKeyTyped(evt);
             }
         });
 
@@ -67,11 +77,21 @@ public class addBigMaterial extends javax.swing.JPanel {
                 caliberMaterialMouseClicked(evt);
             }
         });
+        caliberMaterial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caliberMaterialKeyTyped(evt);
+            }
+        });
 
         inchMaterial.setText("0");
         inchMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 inchMaterialMouseClicked(evt);
+            }
+        });
+        inchMaterial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inchMaterialKeyTyped(evt);
             }
         });
 
@@ -81,11 +101,21 @@ public class addBigMaterial extends javax.swing.JPanel {
                 priceMaterialMouseClicked(evt);
             }
         });
+        priceMaterial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                priceMaterialKeyTyped(evt);
+            }
+        });
 
         widthMaterial.setText("0");
         widthMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 widthMaterialMouseClicked(evt);
+            }
+        });
+        widthMaterial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                widthMaterialKeyTyped(evt);
             }
         });
 
@@ -152,7 +182,7 @@ public class addBigMaterial extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(addPanelBigMaterialLayout.createSequentialGroup()
                                         .addComponent(inchMaterial)
-                                        .addGap(139, 139, 139)))
+                                        .addGap(172, 172, 172)))
                                 .addGroup(addPanelBigMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(addButtonMaterial)
                                     .addComponent(jLabel7))
@@ -266,6 +296,87 @@ public class addBigMaterial extends javax.swing.JPanel {
     private void widthMaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_widthMaterialMouseClicked
         widthMaterial.setText("");
     }//GEN-LAST:event_widthMaterialMouseClicked
+
+    private void widthMaterialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_widthMaterialKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
+        }
+
+        if (widthMaterial.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_widthMaterialKeyTyped
+
+    private void priceMaterialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_priceMaterialKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
+        }
+
+        if (priceMaterial.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_priceMaterialKeyTyped
+
+    private void caliberMaterialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caliberMaterialKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
+        }
+
+        if (caliberMaterial.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_caliberMaterialKeyTyped
+
+    private void nameMaterialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameMaterialKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_nameMaterialKeyTyped
+
+    private void colotMaterialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_colotMaterialKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_colotMaterialKeyTyped
+
+    private void inchMaterialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inchMaterialKeyTyped
+         int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (inchMaterial.getText().trim().length() == 10) {
+        evt.consume();
+    }
+    }//GEN-LAST:event_inchMaterialKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

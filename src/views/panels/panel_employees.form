@@ -148,7 +148,6 @@
                       <Component id="jLabel12" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="resetFormButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -184,9 +183,9 @@
                           <Component id="telephoneText" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="thirdNameText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="115" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -212,6 +211,7 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textNombreActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textNombreKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="secondName">
@@ -221,6 +221,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Primer apellido"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="secondNameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="thirdNameText">
       <Properties>
@@ -229,6 +232,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Segundo apellido"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="thirdNameTextKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="emailText">
       <Properties>
@@ -253,6 +259,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Telephone"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="telephoneTextKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="addEmployees">
       <Properties>
@@ -315,6 +324,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ganancias"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="wageTextKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="employeePositionText">
       <Properties>
@@ -323,6 +335,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Posicicion"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="employeePositionTextKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

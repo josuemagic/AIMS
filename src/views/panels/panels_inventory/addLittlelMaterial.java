@@ -51,11 +51,21 @@ public class addLittlelMaterial extends javax.swing.JPanel {
                 textNameMouseClicked(evt);
             }
         });
+        textName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textNameKeyTyped(evt);
+            }
+        });
 
         textIncch.setText("0");
         textIncch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 textIncchMouseClicked(evt);
+            }
+        });
+        textIncch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textIncchKeyTyped(evt);
             }
         });
 
@@ -65,11 +75,21 @@ public class addLittlelMaterial extends javax.swing.JPanel {
                 textAmountMouseClicked(evt);
             }
         });
+        textAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textAmountKeyTyped(evt);
+            }
+        });
 
         textPrice.setText("0");
         textPrice.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 textPriceMouseClicked(evt);
+            }
+        });
+        textPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textPriceKeyTyped(evt);
             }
         });
 
@@ -215,8 +235,62 @@ public class addLittlelMaterial extends javax.swing.JPanel {
     }//GEN-LAST:event_textIncchMouseClicked
 
     private void textPriceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textPriceMouseClicked
-         textPrice.setText("");
+        textPrice.setText("");
     }//GEN-LAST:event_textPriceMouseClicked
+
+    private void textPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textPriceKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
+        }
+
+        if (textPrice.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textPriceKeyTyped
+
+    private void textIncchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textIncchKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
+        }
+
+        if (textIncch.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textIncchKeyTyped
+
+    private void textAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textAmountKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
+        }
+
+        if (textAmount.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textAmountKeyTyped
+
+    private void textNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textNameKeyTyped
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textNameKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
